@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(238, 238, 238);
+}
+.accordions{
+    position: relative;
+    margin: 100px auto;
+    width: 500px;
+    
+}
+input[type='checkbox']{
+    display: none;
+}
+.accordions label{
+    display: flex;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: #1746A2;
+}
+.accordions label::after{
+    content: "\f077";
+    font-family: fontawesome;
+    right: 20px;
+    position: absolute;
+    transition: .5s;
+}
+.accordions input[type='checkbox']:checked ~ label::after{
+    transform: rotate(180deg);
+}
+.accordions input[type='checkbox']:checked ~ .accordion-content{
+    height: auto;
+}
+.accordion-main{
+    margin-top: 10px;
+    box-shadow: 0px 0px 5px grey;
+    background-color: white;
+}
+.accordion-content{
+    height: 0;
+    overflow: hidden;
+}
+.accordion-content p{
+    padding: 10px 20px;
+}
